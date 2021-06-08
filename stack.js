@@ -1,15 +1,10 @@
 class Stack{
     constructor(){
         this.storage =  [];
-        this.size = 0; 
-    }
-
-    isEmpty(){
-        return (this.storage.length == 0);
     }
 
     stackLen(){
-        return this.items.length;
+        return this.storage.length;
     }
 
     push(element){
@@ -17,7 +12,7 @@ class Stack{
     }
 
     pop(){
-        if(isEmpty()){
+        if(this.storage.length === 0){
             return "Stack Underflow";
         }
         return this.storage.pop();
@@ -25,7 +20,7 @@ class Stack{
     }
 
     peek(){
-        if(isEmpty()){
+        if(this.storage.length === 0){
             return "Stack Underflow";
         }
         return this.storage[this.storage.length - 1];
@@ -33,9 +28,27 @@ class Stack{
 
     printStack(){
         var items = ''
-        for(var i = 0; i < this.items.length; i++){
-            items += this.items[i] + "";
+        for(var i = 0; i < this.storage.length; i++){
+            items += this.storage[i] + " ";
         }
         return items;
     }
 }
+
+const stack = new Stack();
+
+//test cases
+console.log(stack.pop()); //Underflow
+
+stack.push('a');
+stack.push('b'); // items = [a,b]
+
+console.log(stack.stackLen()); // 2
+console.log(stack.peek()); // b
+console.log(stack.printStack()); // a b
+
+console.log(stack.pop()); // b
+console.log(stack.peek()); // a
+console.log(stack.stackLen()); // 1
+
+
