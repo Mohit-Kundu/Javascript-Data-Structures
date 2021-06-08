@@ -1,16 +1,20 @@
 class Stack{
+
     constructor(){
         this.storage =  [];
     }
 
+    //Returns length of stack
     stackLen(){
         return this.storage.length;
     }
 
+    //Inserts element to end of stack
     push(element){
         this.storage.push(element);
     }
 
+    //Removes last element of stack
     pop(){
         if(this.storage.length === 0){
             return "Stack Underflow";
@@ -19,6 +23,7 @@ class Stack{
         
     }
 
+    //Returns last element of Stack
     peek(){
         if(this.storage.length === 0){
             return "Stack Underflow";
@@ -26,6 +31,7 @@ class Stack{
         return this.storage[this.storage.length - 1];
     }
 
+    //Prints all elements of Stack
     printStack(){
         var items = ''
         for(var i = 0; i < this.storage.length; i++){
