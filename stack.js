@@ -46,7 +46,7 @@ class Stack{
 const stack = new Stack();
 
 //test cases
-console.log(stack.pop()); //Underflow
+console.log(stack.printStack()); //Underflow
 
 stack.push('a');
 stack.push('b'); // items = [a,b]
