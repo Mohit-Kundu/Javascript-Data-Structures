@@ -32,6 +32,9 @@ class Stack{
 
     //Prints all elements of Stack
     printStack(){
+        if(this.storage.length === 0){
+            return "Stack Underflow";
+        }
         var items = ''
         for(var i = 0; i < this.storage.length; i++){
             items += this.storage[i] + " ";
