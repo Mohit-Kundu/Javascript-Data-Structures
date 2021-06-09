@@ -46,16 +46,16 @@ class Queue{
 const queue = new Queue();
 
 //test cases
-console.log(queue.printQueue());
+console.log(queue.printQueue()); //Underflow
 
-queue.enqueue('a');
-queue.enqueue('b');
-console.log(queue.front());
-console.log(queue.printQueue());
-console.log(queue.queueLen());
+queue.enqueue('a'); 
+queue.enqueue('b'); //items = [a,b]
+console.log(queue.front()); //a
+console.log(queue.printQueue()); // a b
+console.log(queue.queueLen());  //2
 
 console.log(queue.dequeue());
-console.log(queue.front());
-console.log(queue.printQueue());
-console.log(queue.queueLen());
+console.log(queue.front()); //b
+console.log(queue.printQueue()); //b
+console.log(queue.queueLen()); //1
 
