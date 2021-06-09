@@ -12,7 +12,7 @@ class Queue{
         if(this.storage.length === 0){
             return "Queue underflow";
         }
-        return this.storage.pop();
+        return this.storage.shift();
     }
 
     front(){
@@ -20,6 +20,10 @@ class Queue{
             return "Queue underflow";
         }
         return this.storage[0];
+    }
+
+    queueLen(){
+        return this.storage.length;
     }
 
     printQueue(){
@@ -35,3 +39,18 @@ class Queue{
 }
 
 const queue = new Queue();
+
+//test cases
+console.log(queue.printQueue());
+
+queue.enqueue('a');
+queue.enqueue('b');
+console.log(queue.front());
+console.log(queue.printQueue());
+console.log(queue.queueLen());
+
+console.log(queue.dequeue());
+console.log(queue.front());
+console.log(queue.printQueue());
+console.log(queue.queueLen());
+
