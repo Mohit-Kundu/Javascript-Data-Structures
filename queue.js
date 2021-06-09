@@ -4,10 +4,12 @@ class Queue{
         this.storage = [];
     }
 
+    //adds element to end of queue
     enqueue(element){
         this.storage.push(element);
     }
 
+    //removes element from front of queue
     dequeue(){
         if(this.storage.length === 0){
             return "Queue underflow";
@@ -15,6 +17,7 @@ class Queue{
         return this.storage.shift();
     }
 
+    //returns element at the front of queue
     front(){
         if(this.storage.length === 0){
             return "Queue underflow";
@@ -22,10 +25,12 @@ class Queue{
         return this.storage[0];
     }
 
+    //returns queue length
     queueLen(){
         return this.storage.length;
     }
 
+    //prints elements of queue
     printQueue(){
         if(this.storage.length === 0){
             return "Queue underflow";
