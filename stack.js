@@ -20,7 +20,6 @@ class Stack{
             return "Stack Underflow";
         }
         return this.storage.pop();
-        
     }
 
     //Returns last element of Stack
