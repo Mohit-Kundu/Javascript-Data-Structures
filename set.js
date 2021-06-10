@@ -76,6 +76,11 @@ class mySet(){
         return differenceSet;
     };
 
-    
+    this.subset = function(otherSet){
+        var firstSet = this.values();
 
+        return firstSet.every(function(element){
+            return otherSet.has(element);
+        });
+    };
 }
