@@ -1,4 +1,4 @@
-class mySet(){
+function mySet(){
     var items = [];
 
     // Recreation of ES6 methods
@@ -9,7 +9,7 @@ class mySet(){
 
     this.values = function(){
         return items;
-    }
+    };
 
     this.add = function(element){
         if(!this.has(element)){
@@ -29,7 +29,7 @@ class mySet(){
     };
 
     this.size = function(){
-        return items.splice;length;
+        return items.length;
     };
 
     // Adding extra set operations
@@ -55,7 +55,7 @@ class mySet(){
         var firstSet = this.values();
 
         firstSet.forEach(function(element){
-            if(otherset.has(element)){
+            if(otherSet.has(element)){
                 intersectionSet.add(element);
             }
         });
@@ -69,7 +69,7 @@ class mySet(){
 
         firstSet.forEach(function(element){
             if(!otherSet.has(element)){
-                differenceSet.set(element);
+                differenceSet.add(element);
             }
         });
 
@@ -84,3 +84,16 @@ class mySet(){
         });
     };
 }
+
+var A = new mySet();  
+var B = new mySet();  
+A.add("a");
+A.add('b'); // A = [a,b]
+B.add("b");  
+B.add("c");  
+B.add("a");  
+B.add("d"); // B = [b,c,a,d] 
+console.log(A.subset(B)); // true
+console.log(A.intersection(B).values()); // [a,b]
+console.log(B.difference(A).values()); // [c,d]
+console.log(A.union(B).values()); // [a,b,c,d]
