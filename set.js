@@ -33,9 +33,21 @@ class mySet(){
     }
 
     // Adding extra set operations
-
     
+    this.union() = function(otherSet){
+        var unionSet = new mySet();
+        var firstSet = this.values();
+        var secondSet = otherSet.values();
+        
+        firstSet.forEach(function(element){
+            unionSet.add(element);
+        });
 
+        secondSet.forEach(function(element){
+            unionSet.add(element);
+        });
+
+        return unionSet;
     }
 
 
