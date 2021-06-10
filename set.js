@@ -11,7 +11,7 @@ class mySet(){
         return items;
     }
 
-    this.add() = function(element){
+    this.add = function(element){
         if(!this.has(element)){
             items.push(element);
             return 'Element added';
@@ -19,7 +19,7 @@ class mySet(){
         return 'Element already exists';
     };
 
-    this.remove() = function(element){
+    this.remove = function(element){
         if(this.has(element)){
             var index = items.indexOf(element);
             items.splice(index, 1);
@@ -63,5 +63,19 @@ class mySet(){
         return intersectionSet;
     };
 
+    this.difference = function(otherSet){
+        var differenceSet = new mySet();
+        var firstSet = this.values();
+
+        firstSet.forEach(function(element){
+            if(!otherSet.has(element)){
+                differenceSet.set(element);
+            }
+        });
+
+        return differenceSet;
+    };
+
+    
 
 }
