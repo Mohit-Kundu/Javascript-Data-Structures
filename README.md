@@ -6,3 +6,4 @@ If you found this repository helpful, feel free to leave a star ⭐
 ## Data-Structures currently included:
 - Stacks
 - Queues
+- Sets
