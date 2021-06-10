@@ -1,3 +1,5 @@
+// This is based on freecodecamps code for sets
+
 function mySet(){
     var items = [];
 
