@@ -101,11 +101,13 @@ var B = new mySet();
 
 A.add("a");
 A.add('b'); // A = [a,b]
+console.log(A.size()); // 2
 
 B.add("b");  
 B.add("c");  
 B.add("a");  
-B.add("d"); // B = [b,c,a,d] 
+B.add("d"); // B = [b,c,a,d]
+console.log(B.size()); // 4
 
 console.log(A.subset(B)); // true
 console.log(A.intersection(B).values()); // [a,b]
