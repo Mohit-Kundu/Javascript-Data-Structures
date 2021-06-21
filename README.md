@@ -7,3 +7,4 @@ If you found this repository helpful, feel free to leave a star ⭐
 - Stacks
 - Queues
 - Sets
+- Binary Search Trees (BST)
