@@ -52,4 +52,28 @@ class BST{
             else this.insert(this.root.right, data);
         }
     }
+
+    //Search function
+    search(node, data){
+
+        if(node === null) return null;
+
+        //Moving left if given data is lesser than node.data
+        else if(data < node.data){
+            return this.search(node.left, data)
+        }
+
+        //Moving right if given data is greater than node.data
+        else if(data > node.data){
+            return this.search(node.right, data)
+        }
+
+        //Node found
+        else{
+            console.log('Node found')
+            return node;
+        }
+    }
 }
+
+
