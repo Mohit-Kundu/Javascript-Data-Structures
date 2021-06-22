@@ -55,7 +55,7 @@ class BST{
 
     //Search function
     search(node, data){
-
+        //Empty tree
         if(node === null) return null;
 
         //Moving left if given data is lesser than node.data
