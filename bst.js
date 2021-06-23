@@ -53,9 +53,17 @@ class BST{
         }
     }
 
+    findMinNode(node){
+        // if left of a node is null then it is minimum node
+        if(node.left === null)
+            return node;
+        else
+            return this.findMinNode(node.left);
+    }
+
     remove(data){
-    // root is re-initialized with root of a modified tree.
-    this.root = this.removeNode(this.root, data);
+        // root is re-initialized with root of a modified tree.
+        this.root = this.removeNode(this.root, data);
     }
 
     removeNode(node, data){
@@ -90,16 +98,18 @@ class BST{
             }
 
             //Deleting node with one child node on thr left
-            if(node.right === null){
+            else if(node.right === null){
                 node = node.left;
                 return node;
             }
 
             //Deleting node with two children
-            else{
-                node = node.right;
-                node.right = null;
-            }
+            // minumum node of the rigt subtree is stored in min
+            var min = this.findMinNode(node.right);
+            node.data = min.data;
+    
+            node.right = this.removeNode(node.right, min.data);
+            return node;
         }
     }
 
