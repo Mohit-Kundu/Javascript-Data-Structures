@@ -53,6 +53,7 @@ class BST{
         }
     }
 
+    //Finds minimum node
     findMinNode(node){
         // if left of a node is null then it is minimum node
         if(node.left === null)
