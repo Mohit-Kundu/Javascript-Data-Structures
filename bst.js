@@ -53,6 +53,56 @@ class BST{
         }
     }
 
+    remove(data){
+    // root is re-initialized with root of a modified tree.
+    this.root = this.removeNode(this.root, data);
+    }
+
+    removeNode(node, data){
+        if(node === null) return null;
+
+        //Moving to left if given data is less than node.data
+        if(data < node.data){
+            node = removeNode(node.left, data)
+            return node
+        }
+
+        //Moving to right if given data is greater than node.data
+        if(data > node.data){
+            node = removeNode(node.right, data);
+        }
+
+        //node found
+        else{
+
+            console.log('Node deleted');
+
+            //If node has no leaf nodes
+            if(node.left === null && node.right === null){
+                node = null;
+                return node;
+            }
+
+            //Deleting node with one child node on the right
+            if(node.left === null){
+                node = node.right;
+                return node;
+            }
+
+            //Deleting node with one child node on thr left
+            if(node.right === null){
+                node = node.left;
+                return node;
+            }
+
+            //Deleting node with two children
+            else{
+                node = node.right;
+                node.right = null;
+            }
+        }
+    }
+
     //Search function
     search(node, data){
         //Empty tree
@@ -60,17 +110,17 @@ class BST{
 
         //Moving left if given data is lesser than node.data
         else if(data < node.data){
-            return this.search(node.left, data)
+            return this.search(node.left, data);
         }
 
         //Moving right if given data is greater than node.data
         else if(data > node.data){
-            return this.search(node.right, data)
+            return this.search(node.right, data);
         }
 
         //Node found
         else{
-            console.log('Node found')
+            console.log('Node found');
             return node;
         }
     }
