@@ -57,6 +57,7 @@ class BST{
         // if left of a node is null then it is minimum node
         if(node.left === null)
             return node;
+        //Moving left
         else
             return this.findMinNode(node.left);
     }
