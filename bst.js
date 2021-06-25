@@ -15,7 +15,7 @@ class BST{
     }
 
     insert(node, data){
-        var newNode = new node(data);
+        var newNode = new Node(data);
 
         //If tree is empty make newNode the rootNode
         if(this.root === null){
@@ -137,6 +137,10 @@ class BST{
         }
     }
 
+    getroot(){
+        return this.root;
+    }
+
     //DFS functions
 
     // left, root, right
@@ -166,5 +170,53 @@ class BST{
         }
     }
 }
+
+var bst = new BST();
+
+//Test cases
+
+bst.insert(10);
+bst.insert(5);
+bst.insert(15);
+bst.insert(25);
+bst.insert(20);
+bst.insert(2);
+bst.insert(4);
+bst.insert(30);
+
+//      10
+//     /  \
+//    5     15
+//   / \      \
+//  2   4      25
+//            /  \
+//           20   30
+console.log('Preorder:');
+bst.inorder(root);
+console.log('Preorder:');
+bst.preorder(root);
+console.log('Postorder:');
+bst.postorder(root);
+
+bst.remove(25);
+
+//      10
+//     /  \
+//    5     15
+//   / \      \
+//  2   4      30
+//            / 
+//           20
+
+bst.getroot(); //10
+bst.insert(3)
+
+//      10
+//     /  \
+//    5     15
+//   / \      \
+//  2   4      30
+//   \        / 
+//    3     20
 
 
